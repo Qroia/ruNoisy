@@ -199,7 +199,12 @@ class Crawler(object):
             "click_depth": 5
             ...
         }
+        
+        Ru BlackList Update v2
         """
+        rublacklist = requests.get(config["domain_rublacklist"]).json()
+        config["blacklisted_urls"] = config["blacklisted_urls"] + rublacklist
+
         self._config = config
 
     def set_option(self, option, value):

@@ -1,16 +1,35 @@
+# ruNoisy
 
-# Noisy
-[![CircleCI](https://circleci.com/gh/1tayH/noisy/tree/master.svg?style=shield)](https://circleci.com/gh/1tayH/noisy/tree/master)
+- English Readme (this)
+- [Rus Language](ruREADME.md)
 
 A simple python script that generates random HTTP/DNS traffic noise in the background while you go about your regular web browsing, to make your web traffic data less valuable for selling and for extra obscurity.
 
-Tested on MacOS High Sierra, Ubuntu 16.04 and Raspbian Stretch and is compatable with both Python 2.7 and 3.6
+Tested on MacOS High Sierra, Ubuntu 16.04(and PopOS! <= 20.04, 21.10 and 22.04) and Raspbian Stretch and is compatable with both Python 2.7 and 3.6
+
+- [ruNoisy](#runoisy)
+  - [What's new in ruNoisy?](#whats-new-in-runoisy)
+  - [Getting Started](#getting-started)
+  - [Dependencies](#dependencies)
+  - [Usage](#usage)
+  - [Output](#output)
+  - [Authors](#authors)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
+
+## What's new in ruNoisy?
+
+At this point, when you use Noisy (whether the config is changed or not), it is important not to let the moment when you throw "dust" (Visiting links) to the operator, and they throw diamonds ("Wrong" links)
+
+- New root link`s and Blacklinks
+- Changed config settings
+- Synchronization with RuBlackList
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine
 
-### Dependencies
+## Dependencies
 
 Install `requests` if you do not have it already installed, using `pip`:
 
@@ -18,27 +37,30 @@ Install `requests` if you do not have it already installed, using `pip`:
 pip install requests
 ```
 
-### Usage
+## Usage
 
 Clone the repository
+
 ```
-git clone https://github.com/1tayH/noisy.git
+git clone https://github.com/Qroia/ruNoisy.git
 ```
 
-Navigate into the `noisy` directory
+Navigate into the `ruNoisy` directory
+
 ```
-cd noisy
+cd ruNoisy
 ```
 
 Run the script
 
 ```
-python noisy.py --config config.json
+python3 noisy.py --config config.json
 ```
 
 The program can accept a number of command line arguments:
+
 ```
-$ python noisy.py --help
+$ python3 noisy.py --help
 usage: noisy.py [-h] [--log -l] --config -c [--timeout -t]
 
 optional arguments:
@@ -47,9 +69,11 @@ optional arguments:
   --config -c   config file
   --timeout -t  for how long the crawler should be running, in seconds
 ```
+
 only the config file argument is required.
 
-###  Output
+## Output
+
 ```
 $ docker run -it noisy --config config.json --log debug
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 4chan.org:80
@@ -76,29 +100,10 @@ DEBUG:urllib3.connectionpool:https://www.reddit.com:443 "GET /user/Saditon HTTP/
 ...
 ```
 
-## Build Using Docker
-
-1. Build the image
-
-`docker build -t noisy .`
-
-**Or** if you'd like to build it for a **Raspberry Pi** (running Raspbian stretch):
-
-`docker build -f Dockerfile.pi -t noisy .`
-
-2. Create the container and run:
-
-`docker run -it noisy --config config.json`
-
-## Some examples
-
-Some edge-cases examples are available on the `examples` folder. You can read more there [examples/README.md](examples/README.md).
-
 ## Authors
 
-* **Itay Hury** - *Initial work* - [1tayH](https://github.com/1tayH)
-
-See also the list of [contributors](https://github.com/1tayH/Noisy/contributors) who participated in this project.
+- **Itay Hury** - _Initial work_ - [1tayH](https://github.com/1tayH)
+- **Qroia** - _ru Update_ - [Qroia](https://github.com/Qroia)
 
 ## License
 
@@ -107,5 +112,6 @@ This project is licensed under the GNU GPLv3 License - see the [LICENSE.md](LICE
 ## Acknowledgments
 
 This project has been inspired by
-* [RandomNoise](http://www.randomnoise.us)
-* [web-traffic-generator](https://github.com/ecapuano/web-traffic-generator)
+
+- [RandomNoise](http://www.randomnoise.us)
+- [web-traffic-generator](https://github.com/ecapuano/web-traffic-generator)
